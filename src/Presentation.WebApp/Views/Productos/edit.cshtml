@@ -1,0 +1,22 @@
+@{ ViewData["Title"] = "Producto > Editar"; }
+
+@model Producto
+
+<h1>
+    Actualizar:
+</h1>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <input asp-for="Id" type="hidden" />
+
+    Descripcion: <input asp-for="Descripcion" required />
+    <br />
+    Precio: <input asp-for="Precio" required />
+    <br />
+     Cantidad: <input asp-for="Cantidad" required />
+    <br />
+    <br />
+    <button>Actualizar</button>
+</form>
+
+<a asp-action="Index">Cancelar</a>

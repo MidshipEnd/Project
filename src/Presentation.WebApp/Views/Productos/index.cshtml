@@ -1,0 +1,32 @@
+@{ ViewData["Title"] = "Productos"; }
+
+@model List<Producto>
+
+<a asp-action="Create">Crear Nuevo</a>
+
+<h1>
+    Productos:
+</h1>
+
+<table>
+    <tr>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th></th>
+    </tr>
+    @foreach (var e in Model)
+    {
+        <tr>
+            <th>@e.Descripcion</th>
+            <td>@e.Precio</td>
+            <td>@e.Cantidad</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@e.Id">Detalles</a> |
+                <a asp-action="Edit" asp-route-id="@e.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@e.Id"
+                 onclick="return confirm('¿Está seguro que desea eliminar esto?');">Eliminar</a>
+            </td>
+        </tr>
+    }
+</table>
