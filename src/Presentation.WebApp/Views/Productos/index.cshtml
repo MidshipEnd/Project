@@ -33,3 +33,31 @@
     }
      </tbody>
 </table>
+
+ <canvas id="Chart"></canvas>
+@section scripts {
+    <script src="//cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        new Chart( //https:www.chartjs.org/
+        document.getElementById('Chart'),
+        {
+            type: 'doughnut',
+            data: {
+                labels: ["Lolaleli","Libros","Ingles","Dona","Pan Molido","Programacion C#","Laptop","Historia 2"],
+                datasets: [{
+                    label: 'Por producto',
+                    hoverOffset: 4,
+                    backgroundColor: ["#f00","#f0aa1f","#a9d70a","#05f20e","05f2a7","#0580f2","#0517f2","#f205d7"],
+                    data: [10,15,3,50,50,10,1,5]
+                }]
+            },
+            options: {
+                responsive: true, aspectRadio: 4, maintainAspectRatio: true
+
+            }
+            
+        }
+        );
+    </script>
+};
