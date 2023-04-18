@@ -1,0 +1,32 @@
+@{ ViewData["Title"] = "Venta > Editar"; }
+
+@model Venta
+
+<h1>
+    Actualizar:
+</h1>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <input asp-for="Id" type="hidden" />
+
+    ClienteId: <select asp-for="ClienteId" required>
+    @foreach (var c in (List<Cliente>)ViewBag.Cliente)        
+    {
+        <option value="@c.Id">@c.Id (@c.Nombre)</option>
+    }
+    </select>
+    <br />
+    ProductoId: <select asp-for="ProductoId" required>
+    @foreach (var c in (List<Producto>)ViewBag.Producto)        
+    {
+        <option value="@c.Id">@c.Id (@c.Descripcion)</option>
+    }
+    </select>
+    <br />
+    Fecha: <input asp-for="Fecha" required />
+    <br />
+    <br />
+    <button>Actualizar</button>
+</form>
+
+<a asp-action="Index">Cancelar</a>

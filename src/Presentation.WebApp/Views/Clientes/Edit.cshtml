@@ -1,0 +1,24 @@
+@{ ViewData["Title"] = "Clientes > Editar"; }
+
+@model Cliente
+
+<h1>
+    Actualizar:
+</h1>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <input asp-for="Id" type="hidden" />
+
+    Nombre: <input asp-for="Nombre" required />
+    <br />
+     Direccion: <input asp-for="Direccion" required />
+    <br />
+     Telefono: <input asp-for="Telefono" required />
+    <br />
+    Correo: <input asp-for="Correo" required />
+    <br />
+    <br />
+    <button>Actualizar</button>
+</form>
+
+<a asp-action="Index">Cancelar</a>

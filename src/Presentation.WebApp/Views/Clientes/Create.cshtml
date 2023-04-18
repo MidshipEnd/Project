@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Clientes > Crear";
+}
+
+@model Cliente
+
+<h1>
+    Insertar:
+</h1>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    Nombre: <input asp-for="Nombre" type="text" required />
+    <br />
+    Direccion: <input asp-for="Direccion" type="text" required/>
+    <br />
+    Telefono: <input asp-for="Telefono" type="number" required />
+    <br />
+    correo: <input asp-for="Correo" type="email" required />
+    <br />
+    <br />
+    <button>Crear</button>
+</form>
+
+<a asp-action="Index">Cancelar</a>
